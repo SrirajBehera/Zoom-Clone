@@ -4,6 +4,8 @@ const server = require('http').Server(app);
 const { v4: uuidv4 } = require('uuid');
 app.set('view engine', 'ejs'); // enmbedded javascript
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.redirect(`/${uuidv4()}`)
 })
